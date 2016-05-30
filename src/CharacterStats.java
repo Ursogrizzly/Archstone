@@ -1,4 +1,7 @@
 
 public class CharacterStats {
-  int fay = 0;
+  double CarryWeight = 0;
+  double CarryLimit = 0;
+  int PlayerHealth = 0;
+  
 }
