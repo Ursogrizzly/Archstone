@@ -1,12 +1,15 @@
 class Attributes {
 	
 	int Vitality = 0;
-	int Endurance = 0;
 	int Strength = 0;
 	int Dexterity = 0;
 	int Intelligence = 0;
 	int Luck = 0;
 	int test =0;
+}
+
+class AttributeEffect extends Attributes {
+	
 	
 }
 
@@ -21,10 +24,9 @@ class Status {
 	Burden = 0;
 }
 
-class currentEquipment {
+class currentEquipment extends Status {
 
 	Weapon = 0;
 	Shield = 0;
-	Armor = 0;
-	
+	Armor = 0;	
 }
