@@ -5,7 +5,7 @@ class Attributes {
 	int Intelligence = 0;
 	int Luck = 0;
 }
-
+/*
 class AttributeEffect extends Attributes {
 	
 	
@@ -25,3 +25,4 @@ class currentEquipment extends Status {
 	Shield = 0;
 	Armor = 0;	
 }
+*/
