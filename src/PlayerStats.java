@@ -11,7 +11,7 @@ public class PlayerStats {
 		}
 public String toString() {
 	String returnedValue;
-	returnedValue = "Current Player Carry Weight: " + PlayerCarryWeight + "\n" + "Max Player Carry Weight: " + PlayerCarryLimit;
+	returnedValue = "Current Player Carry Weight: " + PlayerCarryWeight + "/" + PlayerCarryLimit;
 	return returnedValue;
 	}
 }
