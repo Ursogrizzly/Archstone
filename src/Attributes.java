@@ -1,4 +1,4 @@
-public class Attributes {
+class Attributes {
 	
 	int Vitality = 0;
 	int Endurance = 0;
@@ -12,7 +12,7 @@ public class Attributes {
 
 	//Burden would be current carry weight
 
-public class Status {
+class Status {
 	
 	Health = 0;
 	Mana = 0;
