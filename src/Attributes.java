@@ -15,5 +15,6 @@ public class Status {
 	
 	Health = 0;
 	Mana = 0;
+	CarryWeight = 0;
 	Burden = 0;
 }
