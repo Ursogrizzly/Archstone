@@ -19,3 +19,11 @@ class Status {
 	CarryWeight = 0;
 	Burden = 0;
 }
+
+class currentEquipment {
+
+	Weapon = 0;
+	Shield = 0;
+	Armor = 0;
+	
+}
