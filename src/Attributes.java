@@ -6,6 +6,7 @@ public class Attributes {
 	int Dexterity = 0;
 	int Intelligence = 0;
 	int Luck = 0;
+	int test =0;
 	
 }
 
