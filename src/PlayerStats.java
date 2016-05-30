@@ -1,15 +1,32 @@
 
 public class PlayerStats {
-	public double PlayerCarryWeight = 0;
-	public double PlayerCarryLimit = 0;
-	public int PlayerHealth = 0;
-	public int PlayerMana = 0;
-	public int PlayerStamina = 0;
+	private double PlayerCarryWeight = 0;
+	private double PlayerCarryLimit = 0;
+	
+	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
+		PlayerCarryLimit = newPlayerCarryLimit;
+		}
+	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  
+		PlayerCarryWeight = newPlayerCarryWeight;
+		}
+public String toString() {
+	String returnedValue;
+	returnedValue = "Current Player Carry Weight: " + PlayerCarryWeight + "\n" + "Max Player Carry Weight: " + PlayerCarryLimit;
+	return returnedValue;
+	}
+}
 
-	public int Vitality = 0;
-	public int Strength = 0;
-	public int Dexterity = 0;
-	public int Intelligence = 0;
-	public int Luck = 0;
+/*
+	private int PlayerHealth = 0;
+	private int PlayerMana = 0;
+	private int PlayerStamina = 0;
+
+	private int Vitality = 0;
+	private int Strength = 0;
+	private int Dexterity = 0;
+	private int Intelligence = 0;
+	private int Luck = 0;
 	
 	}
+public String Role = "Fighter";
+*/
