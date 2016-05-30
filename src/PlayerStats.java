@@ -5,7 +5,7 @@ public class PlayerStats {
 	int PlayerHealth = 0;
 	int PlayerMana = 0;
 	int PlayerStamina = 0;
-	  
+
 	int Vitality = 0;
 	int Strength = 0;
 	int Dexterity = 0;
