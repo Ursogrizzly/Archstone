@@ -1,4 +1,4 @@
-public class playerAttributes {
+public class Attributes {
 	
 	int Vitality = 0;
 	int Endurance = 0;
