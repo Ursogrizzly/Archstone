@@ -20,7 +20,7 @@ public class GameTest {
         System.out.println("of a max health points of " + Player1.getPlayerMaxHealth()); //gets Max health from instance of PlayerStats
         System.out.println("Which is " + Player1.getPlayerHealthStatus()+ "%" + "\n"); //gets health status ((Current/Max)*100 + a percentage sign) from instance of PlayerStats
        
-        System.out.println("Pick up sword? True or False");
+        System.out.println("Pick up sword with 12 weight? True or False");
         boolean sword = keyboard.nextBoolean();// for testing
         double swordWeight = 12; //sword weight for testing, not sure how to implement
         if (sword = true) // if user takes sword
