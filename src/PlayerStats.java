@@ -1,11 +1,10 @@
-
 public class PlayerStats {
-	private double PlayerCarryWeight = 0;
+	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
 	
-	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  
+	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  //might need fixing
 		PlayerCarryWeight = newPlayerCarryWeight;
 		}
 	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
@@ -18,24 +17,24 @@ public class PlayerStats {
 	public void setPlayerCurrentHealth (int newPlayerCurrentHealth) {  
 		PlayerCurrentHealth = newPlayerCurrentHealth;
 		}
-	public void gainItem (double newItemWeight) {  
-		PlayerCarryWeight = PlayerCarryWeight + newItemWeight;
+	public void gainItem (double ItemWeight) {  //gains an item, and adds Player current Carry Weight and adds itemweight
+		PlayerCarryWeight = PlayerCarryWeight + ItemWeight;
 		}
 	
 
 			
-	public double getPlayerCarryWeight() { 
+	public double getPlayerCarryWeight() { //gets player carry weight and returns it to GameTest
 		return PlayerCarryWeight;
 		}
-	public double getPlayerCarryLimit() { 
+	public double getPlayerCarryLimit() { //gets player carry limit and returns it to GameTest
 		return PlayerCarryLimit;
 		}
-	public String getPlayerWeightStaus() { 
+	public String getPlayerWeightStaus() { //determines if player is under or over weight and returns it
 		String PlayerWeightStatus;
 		if (PlayerCarryWeight >= PlayerCarryLimit)
 			PlayerWeightStatus = "Overweight";
 		else 
-			PlayerWeightStatus = "Overencumbered";
+			PlayerWeightStatus = "Underweight";
 		return PlayerWeightStatus;
 		}
 	
@@ -51,14 +50,3 @@ public class PlayerStats {
 		return PlayerHealthStatus;
 		}
 }
-
-/*
-	private int Vitality = 0;
-	private int Strength = 0;
-	private int Dexterity = 0;
-	private int Intelligence = 0;
-	private int Luck = 0;
-	
-	}
-public String Role = "Fighter";
-*/
