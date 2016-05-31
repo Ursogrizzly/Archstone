@@ -22,7 +22,7 @@ public class GameTest {
         double swordWeight = 12; //sword weight for testing, not sure how to implement
         if (sword = true) // if user takes sword
         Player1.gainItem(swordWeight); //tells Player1 to gainItem with parameter swordWeight
-        System.out.println("You are " + Player1.getPlayerWeightStaus() + "\n");
+        System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have a sword." + "\n");
         // weight status tests if current weight is over max weight 
 		keyboard.close();
 	}
