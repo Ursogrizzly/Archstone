@@ -4,8 +4,8 @@ public class PlayerStats {
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
 	
-	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  //might need fixing
-		PlayerCarryWeight = newPlayerCarryWeight;
+	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  //void because it doesnt return anything
+		PlayerCarryWeight = newPlayerCarryWeight; // might need fix
 		}
 	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
 		PlayerCarryLimit = newPlayerCarryLimit;
