@@ -2,12 +2,24 @@
 public class PlayerStats {
 	private double PlayerCarryWeight = 0;
 	private double PlayerCarryLimit = 0;
+	private int PlayerMaxHealth = 0;
+	private int PlayerCurrentHealth = 0;
 	
 	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  
 		PlayerCarryWeight = newPlayerCarryWeight;
 		}
 	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
 		PlayerCarryLimit = newPlayerCarryLimit;
+		}
+	
+	public void setPlayerMaxHealth (int newPlayerMaxHealth) {  
+		PlayerMaxHealth = newPlayerMaxHealth;
+		}
+	public void setPlayerCurrentHealth (int newPlayerCurrentHealth) {  
+		PlayerCurrentHealth = newPlayerCurrentHealth;
+		}
+	public void gainItem (double newItemWeight) {  
+		PlayerCarryWeight = PlayerCarryWeight + newItemWeight;
 		}
 	
 
@@ -26,13 +38,21 @@ public class PlayerStats {
 			PlayerWeightStatus = "Overencumbered";
 		return PlayerWeightStatus;
 		}
+	
+	public int getPlayerMaxHealth() { 
+		return PlayerMaxHealth;
+		}
+	public int getPlayerCurrentHealth() { 
+		return PlayerCurrentHealth;
+		}
+	public double getPlayerHealthStatus() { 
+		double PlayerHealthStatus;
+		PlayerHealthStatus = (PlayerCurrentHealth/PlayerMaxHealth)*100;
+		return PlayerHealthStatus;
+		}
 }
 
 /*
-	private int PlayerHealth = 0;
-	private int PlayerMana = 0;
-	private int PlayerStamina = 0;
-
 	private int Vitality = 0;
 	private int Strength = 0;
 	private int Dexterity = 0;
