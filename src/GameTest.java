@@ -7,11 +7,12 @@ public class GameTest {
 		PlayerStats Player1;
 		Player1 = new PlayerStats();
 		
-		System.out.print("What is your Carry Limit?");
+		System.out.println("What is your Carry Limit?");
 		Player1.setPlayerCarryLimit((double) keyboard.nextDouble());
-		System.out.print("What is your Carry Weight?");
+		System.out.println("What is your Carry Weight?");
         Player1.setPlayerCarryWeight((double) keyboard.nextDouble());
-        System.out.println(Player1.toString());
+        System.out.println("Player Weight Status: ");
+        System.out.println(Player1.getPlayerWeightStaus());
 		keyboard.close();
 	}
 }

@@ -3,17 +3,29 @@ public class PlayerStats {
 	private double PlayerCarryWeight = 0;
 	private double PlayerCarryLimit = 0;
 	
-	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
-		PlayerCarryLimit = newPlayerCarryLimit;
-		}
 	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  
 		PlayerCarryWeight = newPlayerCarryWeight;
 		}
-public String toString() {
-	String returnedValue;
-	returnedValue = "Current Player Carry Weight: " + PlayerCarryWeight + "/" + PlayerCarryLimit;
-	return returnedValue;
-	}
+	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
+		PlayerCarryLimit = newPlayerCarryLimit;
+		}
+	
+
+			
+	public double getPlayerCarryWeight() { 
+		return PlayerCarryWeight;
+		}
+	public double getPlayerCarryLimit() { 
+		return PlayerCarryLimit;
+		}
+	public String getPlayerWeightStaus() { 
+		String PlayerWeightStatus;
+		if (PlayerCarryWeight >= PlayerCarryLimit)
+			PlayerWeightStatus = "Overweight";
+		else 
+			PlayerWeightStatus = "Overencumbered";
+		return PlayerWeightStatus;
+		}
 }
 
 /*
