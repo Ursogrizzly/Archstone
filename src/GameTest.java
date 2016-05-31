@@ -7,7 +7,7 @@ public class GameTest {
 		Scanner keyboard; //creates the new Scanner Object 
 		keyboard = new Scanner(System.in);
 		
-		PlayerStats Player1;//creates a new player that will hold current and max carry weights and health
+		PlayerStats Player1; //creates a new player that will hold current and max carry weights and health
 		Player1 = new PlayerStats();
 		
 		System.out.println("What is your Carry Limit?");
@@ -16,8 +16,6 @@ public class GameTest {
         Player1.setPlayerCarryWeight((double) keyboard.nextDouble());//user input sets carry weight
         System.out.println("Player Weight Status: "); 
         System.out.println(Player1.getPlayerWeightStaus() + "\n"); //for testing purposes shows status in words
-        
-
         
         System.out.println("Pick up sword with 12 weight? True or False");
         boolean sword = keyboard.nextBoolean();// for testing
