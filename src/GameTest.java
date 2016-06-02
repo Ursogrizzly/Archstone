@@ -17,13 +17,16 @@ public class GameTest {
         System.out.println("Player Weight Status: "); 
         System.out.println(Player1.getPlayerWeightStaus() + "\n"); //for testing purposes shows status in words
         
-        System.out.println("Pick up sword with 12 weight? True or False");
-        boolean sword = keyboard.nextBoolean();// for testing
-        double swordWeight = 12; //sword weight for testing, not sure how to implement
-        if (sword = true) // if user takes sword
-        Player1.gainItem(swordWeight); //tells Player1 to gainItem with parameter swordWeight
-        System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have a sword." + "\n");
-        // weight status tests if current weight is over max weight 
+		System.out.println("Pick up sword with 12 weight? True or False");
+		boolean sword = keyboard.nextBoolean();// for testing
+		double swordWeight = 13; // sword weight for testing, not sure how to implement
+		if (sword = true) { // if user takes sword
+			Player1.gainItem(swordWeight); // tells Player1 to gainItem with parameter swordWeight
+			System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have a sword." + "\n");
+		} 
+		else if (sword = false)
+			System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have no sword." + "\n");
+		// weight status tests if current weight is over max weight
 		keyboard.close();
 	}
 }

@@ -12,7 +12,7 @@ public class PlayerStats {
 		PlayerCarryLimit = newPlayerCarryLimit;
 		}
 	public void SetItemWeight (double newItemWeight) {
-		PlayerCarryLimit = newPlayerCarryLimit;
+		ItemWeight = newItemWeight;
 		}
 	
 	public void setPlayerMaxHealth (int newPlayerMaxHealth) {  
