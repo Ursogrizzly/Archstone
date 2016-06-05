@@ -1,6 +1,6 @@
 public class Items {
 	//setting stuff up, need to fix to be able to import playerStats
-	String[] Type = {Weapon, Equipment, Accessory, Key, Consumable};
+	String[] Type = {Accessory, Key, Consumable};
 	String Name;
 	String Description;
 	String Weight;
@@ -11,10 +11,10 @@ public class Items {
 	   Headfirst
 	*/
 	
-	Key Item = new Key();
-	Item.Type = Key;
-	Item.Name = Dildo;
-	Item.Description = "A dildo is a sex toy, often explicitly phallic in appearance, intended for sexual penetration or other sexual activity during masturbation or with sex partners.";
-	Item.Weight = 10;
+	Item Dildo = new Dildo();
+	.Type = Key;
+	.Name = Dildo;
+	.Description = "A dildo is a sex toy, often explicitly phallic in appearance, intended for sexual penetration or other sexual activity during masturbation or with sex partners.";
+	.Weight = 10;
 	
 }
