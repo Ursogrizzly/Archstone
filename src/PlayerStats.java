@@ -1,7 +1,7 @@
 public class PlayerStats {
 	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
-	private double ItemWeight = 0;
+	public double ItemWeight = 0;
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
 	
