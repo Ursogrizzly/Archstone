@@ -10,7 +10,7 @@ public class GameTest {
 		PlayerStats Player1; //creates a new player that will hold current and max carry weights and health
 		Player1 = new PlayerStats();
 		
-		System.out.println("What backpack do you choose? Heavy (0/30) or Light (0/15)? 1 for Heavy 2 for Light");
+		System.out.println("What backpack do you choose? Heavy (0/30) or Light (0/15)? \n1 for Heavy \n2 for Light");
 		double heavyBackpack = 30;
 		double lightBackpack = 15;
 		int playerChoiceBackpack = (int)keyboard.nextInt();
