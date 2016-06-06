@@ -12,7 +12,7 @@ public class GameTest {
 		
 		System.out.println("What backpack do you choose? Heavy (0/30) or Light (0/15)? \n1 for Heavy \n2 for Light");
 		double heavyBackpack = 30;
-		double lightBackpack = 15;
+		double lightBackpack = 13;//asdf
 		int playerChoiceBackpack = (int)keyboard.nextInt();
 		if (playerChoiceBackpack == 1) {
 			Player1.setPlayerCarryLimit(heavyBackpack);//user input sets carry limit
