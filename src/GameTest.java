@@ -27,13 +27,14 @@ public class GameTest {
 		System.out.println("**You enter the store.**");
 		System.out.println(" ");
 		boolean inStore = true;
-				
+		
+		int storeCount = 0;
 		while (inStore == true) {
-			int storeCount = 1;
+			storeCount = storeCount + 1;
 			System.out.print("The shopkeep shows you ");
-				if (storeCount>1)
+				if (storeCount > 1)
 					System.out.print("again");
-			System.out.println("through his limited wares. Its a small hill village, he reminds you.");
+			System.out.println(" through his limited wares. Its a small hill village, he reminds you.");
 			System.out.println("Would you like a sword that weighs 14 pounds? Yes or no.");
 			String swordTake = keyboard.next();// for testing
 			if (swordTake.equals("yes") || swordTake.equals("Yes")) { // if user takes sword
@@ -62,8 +63,6 @@ public class GameTest {
 				else 
 					break;
 				}
-			else 
-				storeCount = storeCount++;
 		}
 		keyboard.close();
 	}
