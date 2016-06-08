@@ -5,26 +5,35 @@ class Item {
         ACCESSORY, KEY, CONSUMABLE
     };
 
-    Type type;
-    String name;
-    String description;
-    double weight;
+    Type itemType;
+    String itemName;
+    String itemDescription;
+    String itemLongDescription;
+    double itemWeight;
 
     public static void main(String[] args) {
         Item [] items = new Item [999];
 
         items[0] = new Item();
-        items[0].type = Type.KEY;
-        items[0].name = "Basement Key";
-        items[0].description = "Opens the church basement door";
-        items[0].weight = 0.1;
+        items[0].itemType = Type.KEY;
+        items[0].itemName = "Basement Key";
+        items[0].itemDescription = "Opens the church basement door";
+        items[0].itemLongDescription = "Opens the church basement door";
+        items[0].itemWeight = 0.1;
 		
 		
 		items[1] = new Item();
-		items[1].type = Type.CONSUMABLE;
-		items[1].name = "Conner's big fat penis";
-		items[1].description = "A dagger forged by the gods, of which can tear whole assholes apart";
-		items[1].weight = 1000.1;
+		items[1].itemType = Type.CONSUMABLE;
+		items[1].itemName = "Conner's big fat penis";
+		items[1].itemDescription = "A dagger forged by the gods, of which can tear whole assholes apart";
+        items[0].itemLongDescription = "Opens the church basement door";
+		items[1].itemWeight = 1000.1;
+		
+		items[2] = new Item();
+		items[2].itemType = Type.CONSUMABLE;
+		items[2].itemName = "Potion";
+		items[2].itemDescription = "Has a small 'Brewed by Bearwyn' label.";
+		items[2].itemWeight = 1000.1;
 		
     }
 }
