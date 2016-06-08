@@ -1,18 +1,23 @@
-public class Items {
+// It fucking works
+
+class Item {
+    enum Type {
+        ACCESSORY, KEY, CONSUMABLE
+    };
+
+    Type type;
+    String name;
+    String description;
+    double weight;
+
+    public static void main(String... argv) {
+        Item [] items = new Item [999];
+
+        items[0] = new Item();
+        items[0].type = Type.KEY;
+        items[0].name = "Basement Key";
+        items[0].description = "Opens the church basement door";
+        items[0].weight = 0.1;
 	
-	String[] Type = {"Accessory", "Key", "Consumable"};
-	String Name;
-	String Description;
-	String Weight;
-	
-	Items [] I = new Item [999];
-	
-	// There has to be a better way to do this (Btw it's bugged as hell for some reason, I just can't get it to compile)
-	I[1] = new Item();
-	I[1].Type = "Key";
-	I[1].Name = "Basement Key";
-	I[1].Description = "Opens the church basement door";
-	I[1].Weight = "1";
-	
-	
+    }
 }
