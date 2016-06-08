@@ -10,7 +10,7 @@ class Item {
     String description;
     double weight;
 
-    public static void main(String... argv) {
+    public static void main(String[] args) {
         Item [] items = new Item [999];
 
         items[0] = new Item();
