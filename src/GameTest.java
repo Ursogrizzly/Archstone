@@ -59,7 +59,7 @@ public class GameTest {
 			String rockTake = keyboard.next();// for testing
 			if (rockTake.equals("yes") || rockTake.equals("Yes")) { // if user takes sword
 				double rockWeight = 20;
-				Player1.gainItem(rockWeight); // tells Player1 to gainItem with parameter swordWeight
+				Player1.gainItemSituational(rockWeight); // tells Player1 to gainItem with parameter swordWeight
 				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a pile a rocks. Genius." + "\n");
 				} 
 			else //if (rockTake.equals("yes"))
@@ -85,15 +85,15 @@ public class GameTest {
 		String healthChoice = keyboard.next();
 		if ((healthChoice == "man") || (healthChoice == "Man")){
 			System.out.println("You chose to be a MAN!!!");
-			System.out.println("You have (75/75) health.");
+			System.out.println("You have (100/100) health.");
 			Player1.setPlayerMaxHealth(100); // sets max health
 			Player1.setPlayerCurrentHealth(100); //set current health
 			}
 		else {
 			System.out.println("Either you fucked up or you deliberately chose to be a pussy. Why?");
-			System.out.println("You have (75/75) health.");
-			Player1.setPlayerMaxHealth(75); // sets max health
-			Player1.setPlayerCurrentHealth(75); //set current health
+			System.out.println("You have (50/50) health.");
+			Player1.setPlayerMaxHealth(50); // sets max health
+			Player1.setPlayerCurrentHealth(50); //set current health
 			}
 		System.out.println("Your current health points are " + Player1.getPlayerCurrentHealth()); //gets current health from instance of PlayerStats
 		System.out.println("of a max health points of " + Player1.getPlayerMaxHealth()); //gets Max health from instance of PlayerStats

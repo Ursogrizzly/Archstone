@@ -4,7 +4,6 @@ public class PlayerStats {
 	//private ArrayList<item> inventory; //Instantiate an arraylist of items to hold inventory
 	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
-	private double ItemWeight = 0;
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
 	private ArrayList<Weapons> inventory;
@@ -53,16 +52,16 @@ public class PlayerStats {
 		return (PlayerCarryWeight + "/" + PlayerCarryLimit);
 		}	
 /*
-* SET ITEM WEIGHT, gainItem
+*  gainItemSituational, addItem
  */	
-	public void SetItemWeight (double newItemWeight) {
-		ItemWeight = newItemWeight;
-		}
 
-	public void gainItem (double test) {  //gains an item, and adds Player current Carry Weight and adds itemweight
+	public void gainItemSituational (double test) {  //gains an item, and adds Player current Carry Weight and adds itemweight
 		PlayerCarryWeight = PlayerCarryWeight + test;
 		}
-	
+	/**
+	 * Add an item to the player's inventory
+	 * @param Item
+	 */
 	public String addItem(Weapons Item) {
 		if (Item.weight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
 			//make the player over encumbered
