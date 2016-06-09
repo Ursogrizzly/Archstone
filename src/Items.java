@@ -11,8 +11,8 @@ class Items {
     String itemLongDescription;
     double itemWeight;
 
-	
-        public static Items [] itemList = new Items [999];{
+		public static void main (String[] args) { 
+		Items [] itemList = new Items [999];{
        
         itemList[0] = new Items();
         itemList[0].itemType = Type.KEY;
@@ -34,11 +34,11 @@ class Items {
         itemList[3].itemDescription = "A potion that weighs 14 pounds.";
         itemList[3].itemLongDescription = "Strangely, it has the words 'DIE ANTWOORD' ingraved into its hilt.";
         itemList[3].itemWeight = 14.0;
+       
         
-        }
-        public static double getItemWeight(int index){
-        	return itemList[index].itemWeight;
-        }
-        
-   
+		System.out.println(itemList[0].itemName);
+		
+		
+		}
+	}
 }
