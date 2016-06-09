@@ -65,6 +65,11 @@ public class GameTest {
 			else //if (rockTake.equals("yes"))
 				System.out.println("Smart. You are " + Player1.getPlayerWeightStatus() + ", and have no rocks." + "\n");
 		
+			System.out.println("#Would you like to drop any items?");
+			String dropshop =  keyboard.next();
+				if (dropshop == "Sword")
+					Player1.removeItem(Weapons.Sword);
+				System.out.println("You dropped a " + Weapons.Sword.itemName + "and have " + Player1.getPlayerWeightStatusExact());
 			System.out.println("#Would you like to leave the shop now?");
 			String leaveShop = keyboard.next();
 			if (leaveShop.equals("yes") || leaveShop.equals("Yes")){ // if user takes sword

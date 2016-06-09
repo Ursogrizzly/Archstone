@@ -66,13 +66,26 @@ public class PlayerStats {
 		if (Item.weight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
 			//make the player over encumbered
 			return ("Inventory is full.  You cannot pick up this item!");
-		}else{
+			}
+		else{
 			
 			inventory.add(Item); //Add item to the inventory
 			this.PlayerCarryWeight += Item.weight; //Add the items weight to current weight
 			return ("You picked up "+Item.itemName);
+			}
 		}
+	/**
+	 * "Drop" an Item from the inventory
+	 * Currently this only removes an item permanently
+	 * In the future, the controller for the game would have to know all items that are in a room if
+	 * You want to have items dropped and re-pick-up-able
+	 * @param Item
+	 */
+	public void removeItem(Weapons Item) {
+		inventory.remove(Item);
+		//drop the item on the ground in the controller (could return the item removed to game)
 	}
+
 	
 /*
 * SET HEALTH set Max, set current
