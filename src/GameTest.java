@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class GameTest {
 	public static void main(String[] args) {
+		
 		Scanner keyboard; //creates the new Scanner Object 
 		keyboard = new Scanner(System.in);
 		PlayerStats Player1; //creates a new player that will hold current and max carry weights and health
@@ -21,11 +22,11 @@ public class GameTest {
 		String playerChoiceBackpack = keyboard.next();
 		if (playerChoiceBackpack.equals("heavy") || playerChoiceBackpack.equals("Heavy")) {
 			Player1.setPlayerCarryLimit(heavyBackpack);//user input sets carry limit
-			System.out.println("You chose heavy. You have 30 capacity.");
+			System.out.println("You chose heavy. You have " + Player1.getPlayerCarryLimit() + " capacity.");
 			}
 		else if (playerChoiceBackpack.equals("light") || playerChoiceBackpack.equals("Light")) {
 			Player1.setPlayerCarryLimit(lightBackpack);//user input sets carry limit
-			System.out.println("You chose light. You have 15 capacity.");
+			System.out.println("You chose light. You have " + Player1.getPlayerCarryLimit() + " capacity.");
 			}
 		else 
 			System.out.println("You friend doesnt understand, and you gain nothing. You fucked up.");
@@ -35,7 +36,7 @@ public class GameTest {
 		System.out.println(" ");
 		boolean inStore = true;
 		
-		int storeCount = 0;
+		int storeCount = 1;
 		while (inStore == true) {
 			
 			System.out.print("The shopkeep shows you ");
@@ -46,32 +47,37 @@ public class GameTest {
 			System.out.println("#Would you like a sword that weighs 14 pounds? [Yes] or [no].");
 			String swordTake = keyboard.next();// for testing
 			if (swordTake.equals("yes") || swordTake.equals("Yes")) { // if user takes sword
-				double swordWeight = 14;
-				Player1.addItem(Sword);
-				Player1.gainItem(swordWeight); // tells Player1 to gainItem with parameter swordWeight
-				System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have a sword." + "\n");
+				//double swordWeight = 14;
+				Player1.addItem(Weapons.Sword);
+				//Player1.gainItem(swordWeight); // tells Player1 to gainItem with parameter swordWeight
+				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a sword." + "\n");
 				} 
 			else 
-				System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have no sword." + "\n");
+				System.out.println("You are " + Player1.getPlayerWeightStatus() + ", and have no sword." + "\n");
 		
 			System.out.println("#Would you like a pile of heavy rocks? [Yes] or [no].");
 			String rockTake = keyboard.next();// for testing
 			if (rockTake.equals("yes") || rockTake.equals("Yes")) { // if user takes sword
 				double rockWeight = 20;
 				Player1.gainItem(rockWeight); // tells Player1 to gainItem with parameter swordWeight
-				System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have a pile a rocks. Genius." + "\n");
+				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a pile a rocks. Genius." + "\n");
 				} 
 			else //if (rockTake.equals("yes"))
-				System.out.println("Smart. You are " + Player1.getPlayerWeightStaus() + ", and have no rocks." + "\n");
+				System.out.println("Smart. You are " + Player1.getPlayerWeightStatus() + ", and have no rocks." + "\n");
 		
 			System.out.println("#Would you like to leave the shop now?");
 			String leaveShop = keyboard.next();
 			if (leaveShop.equals("yes") || leaveShop.equals("Yes")){ // if user takes sword
-				if (Player1.getPlayerWeightStaus() == "Overweight")
-					System.out.println("Sorry you can't leave. You are overweight. Welcome to the void.");
-				else 
+				if (Player1.getPlayerWeightStatus() == "Overweight"){
+					System.out.println("Sorry you can't leave. You are " + Player1.getPlayerWeightStatus() + ". **Welcome to the void.");
+					System.out.println("** WELCOME TO THE VOID. **");
+					inStore = true;
+					}
+				else {
 					storeCount = storeCount++;
+					inStore = false;
 					break;
+					}
 				}
 		}
 		System.out.println("A god comes down from space and decides your physique.");

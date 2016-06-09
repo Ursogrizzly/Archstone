@@ -41,7 +41,7 @@ public class PlayerStats {
 	public double getPlayerCarryLimit() { //gets player carry limit and returns it to GameTest
 		return PlayerCarryLimit;
 		}
-	public String getPlayerWeightStaus() { //determines if player is under or over weight and returns it
+	public String getPlayerWeightStatus() { //determines if player is under or over weight and returns it
 		String PlayerWeightStatus;
 		if (PlayerCarryWeight >= PlayerCarryLimit)
 			PlayerWeightStatus = "Overweight";
@@ -49,6 +49,9 @@ public class PlayerStats {
 			PlayerWeightStatus = "Underweight";
 		return PlayerWeightStatus;
 		}
+	public String getPlayerWeightStatusExact(){
+		return (PlayerCarryWeight + "/" + PlayerCarryLimit);
+		}	
 /*
 * SET ITEM WEIGHT, gainItem
  */	
@@ -60,14 +63,15 @@ public class PlayerStats {
 		PlayerCarryWeight = PlayerCarryWeight + test;
 		}
 	
-	public void addItem(Weapons Item) {
+	public String addItem(Weapons Item) {
 		if (Item.weight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
 			//make the player over encumbered
-			System.out.println("Inventory is full.  You cannot pick up this item!");
+			return ("Inventory is full.  You cannot pick up this item!");
 		}else{
-			System.out.println("You picked up "+Item.itemName);
+			
 			inventory.add(Item); //Add item to the inventory
-			this.PlayerCarryWeight += Weapons.weight; //Add the items weight to current weight
+			this.PlayerCarryWeight += Item.weight; //Add the items weight to current weight
+			return ("You picked up "+Item.itemName);
 		}
 	}
 	
