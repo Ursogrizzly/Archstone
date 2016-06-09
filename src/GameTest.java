@@ -50,7 +50,7 @@ public class GameTest {
 				//double swordWeight = 14;
 				Player1.addItem(Weapons.Sword);
 				//Player1.gainItem(swordWeight); // tells Player1 to gainItem with parameter swordWeight
-				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a sword." + "\n");
+				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a sword that is " + Weapons.Sword.itemDescription + "\n");
 				} 
 			else 
 				System.out.println("You are " + Player1.getPlayerWeightStatus() + ", and have no sword." + "\n");
@@ -67,8 +67,9 @@ public class GameTest {
 		
 			System.out.println("#Would you like to drop any items?");
 			String dropshop = keyboard.next();
-				if (dropshop.equals("sword")){
+				if (dropshop.equals("sword") || dropshop.equals("Sword")){
 					Player1.removeItem(Weapons.Sword);
+					
 					System.out.println("You dropped a " + Weapons.Sword.itemName + " and have " + Player1.getPlayerWeightStatusExact());
 					}
 				else 
