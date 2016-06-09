@@ -49,8 +49,8 @@ public class PlayerStats {
 		ItemWeight = newItemWeight;
 		}
 
-	public void gainItem (double ItemWeight) {  //gains an item, and adds Player current Carry Weight and adds itemweight
-		PlayerCarryWeight = PlayerCarryWeight + ItemWeight;
+	public void gainItem (double test) {  //gains an item, and adds Player current Carry Weight and adds itemweight
+		PlayerCarryWeight = PlayerCarryWeight + test;
 		}
 	
 /*
@@ -76,4 +76,6 @@ public class PlayerStats {
 		PlayerHealthStatus = (PlayerCurrentHealth/PlayerMaxHealth)*100;
 		return PlayerHealthStatus;
 		}
+	
 }
+

@@ -1,11 +1,31 @@
 import java.util.Scanner;
 public class GameTest {
 	public static void main(String[] args) {
+		
+		
+		
+		
+		
 		Scanner keyboard; //creates the new Scanner Object 
 		keyboard = new Scanner(System.in);
 		
 		PlayerStats Player1; //creates a new player that will hold current and max carry weights and health
 		Player1 = new PlayerStats();
+		
+		
+		System.out.println(Weapons.Sword.itemName);
+		System.out.println(Weapons.Sword.weight);
+		double gainedWeight = Weapons.Sword.weight;
+		System.out.println(gainedWeight);
+
+		Player1.gainItem(Weapons.Sword.weight);
+	//	Player1.gainItem(test);
+		System.out.println(Items.getItemWeight(3));
+
+		
+		
+		
+		
 		
 		System.out.println("Your friend, the shopkeepers son, offers you a backpack before your journey.");
 		System.out.println("#What backpack do you choose? [Heavy] (0/30) or [Light] (0/15)?");

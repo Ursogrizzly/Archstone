@@ -1,11 +1,16 @@
+class Weapons{
+	public String itemName;
+	public  String itemDescription;
+	public  double weight;
+	
+	public Weapons(String mitemName,String mitemDescription,int mweight)
+	{
+	    itemName=mitemName;
+	    itemDescription=mitemDescription;
+	    weight=mweight;
+	}
+	
+	public static Weapons Sword =  new Weapons("Sword", "14 pounds", 14);
+	public static Weapons Spear =  new Weapons("Spear", "Smells.", 30);
 
-public class Weapons {
-		   enum FreshJuiceSize{ SMALL, MEDIUM, LARGE }
-		   FreshJuiceSize size;
-
-
-public static void main(String args[]){
-	      Weapons juice = new Weapons();
-	      juice.size = Weapons.FreshJuiceSize.MEDIUM ;
-	      System.out.println("Size: " + juice.size);
 }
