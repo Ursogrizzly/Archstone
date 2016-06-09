@@ -47,6 +47,7 @@ public class GameTest {
 			String swordTake = keyboard.next();// for testing
 			if (swordTake.equals("yes") || swordTake.equals("Yes")) { // if user takes sword
 				double swordWeight = 14;
+				Player1.addItem(Sword);
 				Player1.gainItem(swordWeight); // tells Player1 to gainItem with parameter swordWeight
 				System.out.println("You are " + Player1.getPlayerWeightStaus() + ", and have a sword." + "\n");
 				} 

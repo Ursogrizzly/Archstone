@@ -1,7 +1,7 @@
 class Weapons{
 	public String itemName;
 	public  String itemDescription;
-	public  double weight;
+	public static  double weight;
 	
 	public Weapons(String mitemName,String mitemDescription,int mweight)
 	{

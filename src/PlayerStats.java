@@ -60,14 +60,25 @@ public class PlayerStats {
 		PlayerCarryWeight = PlayerCarryWeight + test;
 		}
 	
+	public void addItem(Weapons Item) {
+		if (Item.weight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
+			//make the player over encumbered
+			System.out.println("Inventory is full.  You cannot pick up this item!");
+		}else{
+			System.out.println("You picked up "+Item.itemName);
+			inventory.add(Item); //Add item to the inventory
+			this.PlayerCarryWeight += Weapons.weight; //Add the items weight to current weight
+		}
+	}
+	
 /*
 * SET HEALTH set Max, set current
 */
 	public void setPlayerMaxHealth (int newPlayerMaxHealth) {  
-		PlayerMaxHealth = newPlayerMaxHealth;
+		this.PlayerMaxHealth = newPlayerMaxHealth;
 		}
 	public void setPlayerCurrentHealth (int newPlayerCurrentHealth) {  
-		PlayerCurrentHealth = newPlayerCurrentHealth;
+		this.PlayerCurrentHealth = newPlayerCurrentHealth;
 		}
 /*
 * GET HEALTH Get Max, get current, and get health status as percentage
