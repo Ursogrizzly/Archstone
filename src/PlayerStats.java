@@ -17,9 +17,8 @@ public class PlayerStats {
 		this.PlayerMaxHealth = maxH;
 		
 		//Initialize current variables
-		weight = 0;
-		health = maxHealth;
-		armor = maxArmor;		
+		PlayerCarryWeight = 0;
+		PlayerCurrentHealth = PlayerMaxHealth;		
 	}
 	
 /*

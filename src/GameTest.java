@@ -4,7 +4,7 @@ public class GameTest {
 		Scanner keyboard; //creates the new Scanner Object 
 		keyboard = new Scanner(System.in);
 		PlayerStats Player1; //creates a new player that will hold current and max carry weights and health
-		Player1 = new PlayerStats();
+		Player1 = new PlayerStats(0,0);
 		/*
 		 * Insert test code after this point
 		 */
