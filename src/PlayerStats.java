@@ -1,18 +1,26 @@
+import java.util.ArrayList;
 public class PlayerStats {
-//	private int PlayerVita = 0;
-//	private int PlayerStr = 0;
-//	private int PlayerDex = 0;
-//	private int PlayerInt = 0;
-//	private int PlayerLuck = 0;
 
+	//private ArrayList<item> inventory; //Instantiate an arraylist of items to hold inventory
 	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
-	public double ItemWeight = 0;
+	private double ItemWeight = 0;
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
-
-//must create a set and get for EACH STAT. maybe don't include that many stats.
-
+	private ArrayList<Weapons> inventory;
+	
+	public PlayerStats(int wt, int maxH) {
+		//Add more parameters to this when you need to make more attributes such as
+		//current equipped weapon, class type, mana, etc.
+		this.inventory = new ArrayList<Weapons>();
+		this.PlayerCarryLimit = wt;
+		this.PlayerMaxHealth = maxH;
+		
+		//Initialize current variables
+		weight = 0;
+		health = maxHealth;
+		armor = maxArmor;		
+	}
 	
 /*
 * SET WEIGHT player carry WEIGHT, set player carry limit,
