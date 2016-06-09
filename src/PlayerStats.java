@@ -84,7 +84,7 @@ public class PlayerStats {
 	public void removeItem(Weapons Item) {
 		inventory.remove(Item);
 		//drop the item on the ground in the controller (could return the item removed to game)
-	}
+		}
 
 	
 /*
