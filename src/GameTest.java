@@ -35,21 +35,17 @@ public class GameTest {
 		System.out.println("**You enter the store.**");
 		System.out.println(" ");
 		boolean inStore = true;
-		
 		int storeCount = 1;
 		while (inStore == true) {
-			
-			System.out.print("The shopkeep shows you ");
-				if (storeCount > 1){
-					System.out.print("again ");
-					}
-			System.out.println("through his limited wares. Its a small hill village, he reminds you.");
+			System.out.print(storeCount);
+			System.out.print("The shopkeep ");
+			if (storeCount >= 2)
+				System.out.print("again ");
+			System.out.println("show you through his limited wares. Its a small hill village, he reminds you.");
 			System.out.println("#Would you like a sword that weighs 14 pounds? [Yes] or [no].");
 			String swordTake = keyboard.next();// for testing
 			if (swordTake.equals("yes") || swordTake.equals("Yes")) { // if user takes sword
-				//double swordWeight = 14;
 				Player1.addItem(Weapons.Sword);
-				//Player1.gainItem(swordWeight); // tells Player1 to gainItem with parameter swordWeight
 				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a sword that is " + Weapons.Sword.itemDescription + "\n");
 				} 
 			else 
@@ -67,9 +63,8 @@ public class GameTest {
 		
 			System.out.println("#Would you like to drop any items?");
 			String dropshop = keyboard.next();
-				if (dropshop.equals("sword") || dropshop.equals("Sword")){
+				if ((dropshop.equals("sword")) || (dropshop.equals("Sword"))){
 					Player1.removeItem(Weapons.Sword);
-					
 					System.out.println("You dropped a " + Weapons.Sword.itemName + " and have " + Player1.getPlayerWeightStatusExact());
 					}
 				else 
@@ -77,18 +72,19 @@ public class GameTest {
 				
 			System.out.println("#Would you like to leave the shop now?");
 			String leaveShop = keyboard.next();
-			if (leaveShop.equals("yes") || leaveShop.equals("Yes")){ // if user takes sword
+			if (leaveShop.equals("yes") || leaveShop.equals("Yes")){ // if user leaves shop
 				if (Player1.getPlayerWeightStatus() == "Overweight"){
 					System.out.println("Sorry you can't leave. You are " + Player1.getPlayerWeightStatus() + ". **Welcome to the void.");
 					System.out.println("** WELCOME TO THE VOID. **");
 					inStore = true;
 					}
 				else {
-					storeCount = storeCount++;
 					inStore = false;
 					break;
 					}
 				}
+			else
+				storeCount = storeCount +1;
 		}
 		System.out.println("A god comes down from space and decides your physique.");
 		System.out.println("#Do you want to be a large burly [man] or a [pussy]?");

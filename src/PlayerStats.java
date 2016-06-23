@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 public class PlayerStats {
 
-	//private ArrayList<item> inventory; //Instantiate an arraylist of items to hold inventory
+	private ArrayList<Weapons> inventory; //Instantiate an arraylist of items to hold inventory
 	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
-	private ArrayList<Weapons> inventory;
 	
 	public PlayerStats(int wt, int maxH) {
 		//Add more parameters to this when you need to make more attributes such as
@@ -83,6 +82,8 @@ public class PlayerStats {
 	 */
 	public void removeItem(Weapons Item) {
 		inventory.remove(Item);
+		PlayerCarryWeight = PlayerCarryWeight - Weapons.Sword.weight;
+		
 		//drop the item on the ground in the controller (could return the item removed to game)
 		}
 
