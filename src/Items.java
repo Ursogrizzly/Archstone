@@ -1,4 +1,4 @@
-// It fucking works
+// It works
 
 class Items {
     enum Type {
@@ -12,7 +12,7 @@ class Items {
     double itemWeight;
 
 		public static void main (String[] args) { 
-		Items [] itemList = new Items [999]
+		Items [] itemList = new Items [999];
        
         itemList[0] = new Items();
         itemList[0].itemType = Type.KEY;

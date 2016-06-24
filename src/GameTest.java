@@ -31,13 +31,13 @@ public class GameTest {
 		else 
 			System.out.println("You friend doesnt understand, and you gain nothing. You fucked up.");
 		
+		
 		System.out.println(" ");
 		System.out.println("**You enter the store.**");
 		System.out.println(" ");
 		boolean inStore = true;
 		int storeCount = 1;
 		while (inStore == true) {
-			System.out.print(storeCount);
 			System.out.print("The shopkeep ");
 			if (storeCount >= 2)
 				System.out.print("again ");
@@ -86,10 +86,11 @@ public class GameTest {
 			else
 				storeCount = storeCount +1;
 		}
+		System.out.println("** Your leave the store. **");
 		System.out.println("A god comes down from space and decides your physique.");
 		System.out.println("#Do you want to be a large burly [man] or a [pussy]?");
 		String healthChoice = keyboard.next();
-		if ((healthChoice == "man") || (healthChoice == "Man")){
+		if ((healthChoice.equals("man")) || (healthChoice.equals("Man"))){
 			System.out.println("You chose to be a MAN!!!");
 			System.out.println("You have (100/100) health.");
 			Player1.setPlayerMaxHealth(100); // sets max health
@@ -105,6 +106,12 @@ public class GameTest {
 		System.out.println("of a max health points of " + Player1.getPlayerMaxHealth()); //gets Max health from instance of PlayerStats
 		System.out.println("Which is " + Player1.getPlayerHealthStatus()+ "%" + "\n"); //gets health status ((Current/Max)*100 + a percentage sign) from instance of PlayerStats
 
+		System.out.println("'HALT! Hand over the [Garibay Gold] or pay the blood price.'");
+		System.out.println("#What would you like to do?");
+		System.out.println("[ATTACK][FLEE][RESPOND]");
+		CombatEncounter TrollEncounter; 
+		TrollEncounter = new CombatEncounter("Troll", "Garibay", keyboard.next(), true);//will eventually be Monsters.Troll
+		
 		keyboard.close();
 	}
 }

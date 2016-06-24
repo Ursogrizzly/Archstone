@@ -89,7 +89,7 @@ public class PlayerStats {
 
 	
 /*
-* SET HEALTH set Max, set current
+* SET HEALTH set Max, set current, set modified health
 */
 	public void setPlayerMaxHealth (int newPlayerMaxHealth) {  
 		this.PlayerMaxHealth = newPlayerMaxHealth;
@@ -97,6 +97,9 @@ public class PlayerStats {
 	public void setPlayerCurrentHealth (int newPlayerCurrentHealth) {  
 		this.PlayerCurrentHealth = newPlayerCurrentHealth;
 		}
+	public void setPlayerModHealth (int newPlayerModHealth) {
+		this.PlayerCurrentHealth = this.PlayerCurrentHealth + newPlayerModHealth;
+	}
 /*
 * GET HEALTH Get Max, get current, and get health status as percentage
 */
