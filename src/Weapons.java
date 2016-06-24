@@ -9,7 +9,7 @@ class Weapons{
 	    this.itemDescription=mitemDescription;
 	    this.weight=mweight;
 	}	
-	public static Weapons Sword =  new Weapons("Sword", "Short and tubby", 14);
-	public static Weapons Spear =  new Weapons("Spear", "Smells.", 30);
+	public static Weapons Sword =  new Weapons("Sword", "bent and rusty", 14);
+	public static Weapons Spear =  new Weapons("Spear", "smells", 30);
 
 }

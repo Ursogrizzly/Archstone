@@ -10,11 +10,19 @@ public class GameTest {
 		 * Insert test code after this point
 		 */
 		
+		System.out.println("'HALT! Hand over the [Garibay Gold] or pay the blood price.'");
+		System.out.println("#What would you like to do?");
+		System.out.println("[ATTACK][FLEE][RESPOND]");
+		CombatEncounter TrollEncounter; 
+		TrollEncounter = new CombatEncounter("Troll", "Garibay", keyboard.next(), true);//will eventually be Monsters.Troll
 		
 		
 		/*
 		 * To here
 		 */
+		System.out.println("***************ARCHSTONE*************");
+		System.out.println("*****Welcome to the Land of Lork!****");
+		System.out.println("*************************************");
 		System.out.println("Your friend, the shopkeepers son, offers you a backpack before your journey.");
 		System.out.println("#What backpack do you choose? [Heavy] (0/30) or [Light] (0/15)?");
 		double heavyBackpack = 30;
@@ -41,26 +49,24 @@ public class GameTest {
 			System.out.print("The shopkeep ");
 			if (storeCount >= 2)
 				System.out.print("again ");
-			System.out.println("show you through his limited wares. Its a small hill village, he reminds you.");
-			System.out.println("#Would you like a sword that weighs 14 pounds? [Yes] or [no].");
-			String swordTake = keyboard.next();// for testing
-			if (swordTake.equals("yes") || swordTake.equals("Yes")) { // if user takes sword
+			System.out.println("show you through his limited wares. Its a small hill village, \nhe reminds you.");
+			System.out.println("#Would you like a " + Weapons.Sword.itemName + " that weighs 14 pounds? [Yes] or [no].");
+			if (keyboard.next().equals("yes") || keyboard.next().equals("Yes")) { // if user takes sword
 				Player1.addItem(Weapons.Sword);
-				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a sword that is " + Weapons.Sword.itemDescription + "\n");
+				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a sword that is " + Weapons.Sword.itemDescription + ".\n");
 				} 
 			else 
 				System.out.println("You are " + Player1.getPlayerWeightStatus() + ", and have no sword." + "\n");
 		
 			System.out.println("#Would you like a pile of heavy rocks? [Yes] or [no].");
-			String rockTake = keyboard.next();// for testing
-			if (rockTake.equals("yes") || rockTake.equals("Yes")) { // if user takes sword
+			if (keyboard.next().equals("yes") || keyboard.next().equals("Yes")) { // if user takes sword
 				double rockWeight = 20;
 				Player1.gainItemSituational(rockWeight); // tells Player1 to gainItem with parameter swordWeight
 				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a pile a rocks. Genius." + "\n");
 				} 
-			else //if (rockTake.equals("yes"))
+			else
 				System.out.println("Smart. You are " + Player1.getPlayerWeightStatus() + ", and have no rocks." + "\n");
-		
+			
 			System.out.println("#Would you like to drop any items?");
 			String dropshop = keyboard.next();
 				if ((dropshop.equals("sword")) || (dropshop.equals("Sword"))){
@@ -106,12 +112,9 @@ public class GameTest {
 		System.out.println("of a max health points of " + Player1.getPlayerMaxHealth()); //gets Max health from instance of PlayerStats
 		System.out.println("Which is " + Player1.getPlayerHealthStatus()+ "%" + "\n"); //gets health status ((Current/Max)*100 + a percentage sign) from instance of PlayerStats
 
-		System.out.println("'HALT! Hand over the [Garibay Gold] or pay the blood price.'");
-		System.out.println("#What would you like to do?");
-		System.out.println("[ATTACK][FLEE][RESPOND]");
-		CombatEncounter TrollEncounter; 
-		TrollEncounter = new CombatEncounter("Troll", "Garibay", keyboard.next(), true);//will eventually be Monsters.Troll
 		
 		keyboard.close();
+		System.out.println("***GAME OVER!***");
+
 	}
 }
