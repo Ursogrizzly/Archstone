@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class PlayerStats {
 
-	private ArrayList<Weapons> inventory; //Instantiate an arraylist of items to hold inventory
+	static ArrayList<Weapons> inventory; //Instantiate an arraylist of items to hold inventory
 	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
 	private int PlayerMaxHealth = 0;
