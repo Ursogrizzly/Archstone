@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class betaTest {
 
-	public static void main(String[] args) {
+	//public static void main(String[] args) {
 		Scanner keyboard; // creates the new Scanner Object
 		keyboard = new Scanner(System.in);
 		boolean Encounter = true;
@@ -12,8 +12,8 @@ public class betaTest {
 		String sentence = "null";
 		String Keyword = "Garibay";
 
-while (reponseLoop == true) { // the loop that holds the response
-	System.out.println("ResponseLoop");
+while (reponseLoop = true) { // the loop that holds the response
+	System.out.println("ResponseLoop	beta test");
 
 //	if (Angercount == 2) {
 //		System.out.println("'This is it. Prepare to die.");
@@ -22,7 +22,7 @@ while (reponseLoop == true) { // the loop that holds the response
 //	}
 	
 
-while (Peaceful == true) {
+//while (Peaceful = true) {
 		System.out.println("#What would you like to say?");
 		sentence = keyboard.next();
 		System.out.println();
@@ -42,6 +42,6 @@ while (Peaceful == true) {
 		//} 
 	
 
-} //end or response loop
-}
+//} //end or response loop
+} //end of main loop
 }

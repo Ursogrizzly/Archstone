@@ -5,15 +5,13 @@ public class GameTest {
 		
 		Scanner keyboard; //creates the new Scanner Object 
 		keyboard = new Scanner(System.in);
-		PlayerStats Player1; //creates a new player that will hold current and max carry weights and health
-		Player1 = new PlayerStats(0,0);
+		PlayerStats Player1 = new PlayerStats(0,0);
 		String dynamicUserInput = "null";
 		/*
 		 * Insert test code after this point
 		 */
+
 		
-		CombatEncounter TrollEncounter; 
-		TrollEncounter = new CombatEncounter("Troll", "Garibay", "human", true);//will eventually be Monsters.Troll
 		
 		
 		/*
@@ -28,11 +26,11 @@ public class GameTest {
 		double heavyBackpack = 30;
 		double lightBackpack = 15;
 		dynamicUserInput = keyboard.next();
-		if (dynamicUserInput.equals("heavy") || dynamicUserInput.equals("Heavy")) {
+		if (dynamicUserInput.toLowerCase().equals("heavy")) {
 			Player1.setPlayerCarryLimit(heavyBackpack);//user input sets carry limit
 			System.out.println("You chose heavy. You have " + Player1.getPlayerCarryLimit() + " capacity.");
 			}
-		else if (dynamicUserInput.equals("light") || dynamicUserInput.equals("Light")) {
+		else if (dynamicUserInput.toLowerCase().equals("light")) {
 			Player1.setPlayerCarryLimit(lightBackpack);//user input sets carry limit
 			System.out.println("You chose light. You have " + Player1.getPlayerCarryLimit() + " capacity.");
 			}
@@ -63,24 +61,32 @@ public class GameTest {
 			dynamicUserInput = keyboard.next();
 			if (dynamicUserInput.toLowerCase().equals("yes")) { // if user takes sword
 				double rockWeight = 20;
-				Player1.gainItemSituational(rockWeight); // tells Player1 to gainItem with parameter swordWeight
+				String rockDescription = "a pile of heavy rocks";
+				Player1.addItemSituational("rocks", rockWeight, rockDescription, 0); // tells Player1 to gainItem with parameter swordWeight
 				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a pile a rocks. Genius." + "\n");
 				} 
 			else
 				System.out.println("Smart. You are " + Player1.getPlayerWeightStatus() + ", and have no rocks." + "\n");
 			
-			System.out.println("#Would you like to drop any items?");
+			System.out.println("#Name any items you would like to drop?");
 			dynamicUserInput = keyboard.next();
-				if ((dynamicUserInput.equals("sword")) || (dynamicUserInput.equals("Sword"))){
-					Player1.removeItem(Weapons.Sword);
-					System.out.println("You dropped a " + Weapons.Sword.itemName + " and have " + Player1.getPlayerWeightStatusExact());
+	
+			System.out.println("#What would you like to drop?");
+					dynamicUserInput = keyboard.next();
+					if (dynamicUserInput.toLowerCase().equals("sword")){
+						Player1.removeItem(Weapons.Sword);
+						System.out.println("You dropped a " + Weapons.Sword.itemDescription + Weapons.Sword.itemName + " and have " + Player1.getPlayerWeightStatusExact());
+					}
+					else if (dynamicUserInput.toLowerCase().equals("rock") || dynamicUserInput.toLowerCase().equals("rocks")) {
+						Player1.removeItem(Weapons.Spear);
+						System.out.println("You dropped a " + Weapons.Spear.itemDescription +  Weapons.Spear.itemName + " and have " + Player1.getPlayerWeightStatusExact());
 					}
 				else 
 					System.out.println("You didnt drop anything and have " + Player1.getPlayerWeightStatusExact());
 				
 			System.out.println("#Would you like to leave the shop now?");
-			String leaveShop = keyboard.next();
-			if (leaveShop.equals("yes") || leaveShop.equals("Yes")){ // if user leaves shop
+			dynamicUserInput = keyboard.next();
+			if (dynamicUserInput.toLowerCase().equals("yes")){ // if user leaves shop
 				if (Player1.getPlayerWeightStatus() == "Overweight"){
 					System.out.println("Sorry you can't leave. You are " + Player1.getPlayerWeightStatus() + ". **Welcome to the void.");
 					System.out.println("** WELCOME TO THE VOID. **");
@@ -115,8 +121,20 @@ public class GameTest {
 		System.out.println("Which is " + Player1.getPlayerHealthStatus()+ "%" + "\n"); //gets health status ((Current/Max)*100 + a percentage sign) from instance of PlayerStats
 
 		
+		System.out.println("\rA troll attacks you with a duskdagger."); 
+		int randomDamagePlaceholder = -9;
+		System.out.println("You lose " + randomDamagePlaceholder + " health."); 
+		Player1.setPlayerModHealth(randomDamagePlaceholder);
+
+		System.out.println("Your current health points are " + Player1.getPlayerCurrentHealth()); //gets current health from instance of PlayerStats
+		System.out.println("of a max health points of " + Player1.getPlayerMaxHealth()); //gets Max health from instance of PlayerStats
+		System.out.println("Which is " + Player1.getPlayerHealthStatus()+ "%" + "\n"); //gets health status ((Current/Max)*100 + a percentage sign) from instance of PlayerStats
 		
-	
+		CombatEncounter TrollEncounter; 
+		TrollEncounter = new CombatEncounter(Player1, "Troll", "Garibay", "human", true);//will eventually be Monsters.Troll
+			
+		CombatEncounter OrcEncounter; 
+		OrcEncounter = new CombatEncounter(Player1, "Orc", "Garibay", "human", true);//will eventually be Monsters.Troll
 		
 		keyboard.close();
 		System.out.println("***GAME OVER!***");

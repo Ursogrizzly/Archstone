@@ -16,17 +16,19 @@ public class PlayerStats {
 		
 		//Initialize current variables
 		PlayerCarryWeight = 0;
-		PlayerCurrentHealth = PlayerMaxHealth;		
+		PlayerCurrentHealth = PlayerMaxHealth;	
+
+
 	}
 	
 /*
 * SET WEIGHT player carry WEIGHT, set player carry limit,
 */	
 	public void setPlayerCarryWeight (double newPlayerCarryWeight) {  //void because it doesnt return anything
-		PlayerCarryWeight = newPlayerCarryWeight; // might need fix
+		this.PlayerCarryWeight = newPlayerCarryWeight; // might need fix
 		}
 	public void setPlayerCarryLimit (double newPlayerCarryLimit) {  
-		PlayerCarryLimit = newPlayerCarryLimit;
+		this.PlayerCarryLimit = newPlayerCarryLimit;
 		}
 
 /*
@@ -34,14 +36,14 @@ public class PlayerStats {
 */
 			
 	public double getPlayerCarryWeight() { //gets player carry weight and returns it to GameTest
-		return PlayerCarryWeight;
+		return this.PlayerCarryWeight;
 		}
 	public double getPlayerCarryLimit() { //gets player carry limit and returns it to GameTest
-		return PlayerCarryLimit;
+		return this.PlayerCarryLimit;
 		}
 	public String getPlayerWeightStatus() { //determines if player is under or over weight and returns it
 		String PlayerWeightStatus;
-		if (PlayerCarryWeight >= PlayerCarryLimit)
+		if (this.PlayerCarryWeight >= this.PlayerCarryLimit)
 			PlayerWeightStatus = "Overweight";
 		else 
 			PlayerWeightStatus = "Underweight";
@@ -51,26 +53,35 @@ public class PlayerStats {
 		return (PlayerCarryWeight + "/" + PlayerCarryLimit);
 		}	
 /*
-*  gainItemSituational, addItem
+*  addItemSituational, addItem
  */	
 
-	public void gainItemSituational (double test) {  //gains an item, and adds Player current Carry Weight and adds itemweight
-		PlayerCarryWeight = PlayerCarryWeight + test;
-		}
 	/**
 	 * Add an item to the player's inventory
 	 * @param Item
 	 */
 	public String addItem(Weapons Item) {
-		if (Item.weight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
+		if (Item.itemWeight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
 			//make the player over encumbered
 			return ("Inventory is full.  You cannot pick up this item!");
 			}
 		else{
 			
 			inventory.add(Item); //Add item to the inventory
-			this.PlayerCarryWeight += Item.weight; //Add the items weight to current weight
+			this.PlayerCarryWeight += Item.itemWeight; //Add the items weight to current weight
 			return ("You picked up "+Item.itemName);
+			}
+		}
+	
+	public String addItemSituational(String situationalItemName, double situationalItemWeight, String situationalItemDescription, double situationalItemDamage) {
+		if (situationalItemWeight + this.PlayerCarryWeight > this.PlayerCarryLimit) { //Inventory is full, alternatively you can
+			//make the player over encumbered
+			return ("Inventory is full.  You cannot pick up this item!");
+			}
+		else{
+			inventory.add(Weapons.createWeapon(situationalItemName, situationalItemWeight, situationalItemDescription, situationalItemDamage)); //Add item to the inventory
+			this.PlayerCarryWeight += situationalItemWeight; //Add the items weight to current weight
+			return ("You picked up "+ situationalItemName);
 			}
 		}
 	/**
@@ -81,8 +92,8 @@ public class PlayerStats {
 	 * @param Item
 	 */
 	public void removeItem(Weapons Item) {
-		inventory.remove(Item);
-		PlayerCarryWeight = PlayerCarryWeight - Weapons.Sword.weight;
+		this.inventory.remove(Item);
+		this.PlayerCarryWeight = this.PlayerCarryWeight - Item.itemWeight;
 		
 		//drop the item on the ground in the controller (could return the item removed to game)
 		}
@@ -104,14 +115,14 @@ public class PlayerStats {
 * GET HEALTH Get Max, get current, and get health status as percentage
 */
 	public int getPlayerMaxHealth() { 
-		return PlayerMaxHealth;
+		return this.PlayerMaxHealth;
 		}
 	public int getPlayerCurrentHealth() { 
-		return PlayerCurrentHealth;
+		return this.PlayerCurrentHealth;
 		}
 	public double getPlayerHealthStatus() { 
 		double PlayerHealthStatus;
-		PlayerHealthStatus = (PlayerCurrentHealth/PlayerMaxHealth)*100;
+		PlayerHealthStatus = ((double)this.PlayerCurrentHealth/(this.PlayerMaxHealth)*100.00);
 		return PlayerHealthStatus;
 		}
 	
