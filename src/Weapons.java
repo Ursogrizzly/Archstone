@@ -15,9 +15,10 @@ class Weapons{
 	
 	
 	
-	public static Weapons createWeapon(String ItemName, double ItemWeight, String ItemDescription, double ItemDamage)
+	public static Weapons createWeapon(String SituationalItemName, double SituationalItemWeight, String SituationalItemDescription, double SituationalItemDamage)
 	{
-		Weapons SituationalItem = new Weapons(ItemName, ItemWeight, ItemDescription, ItemDamage);
+		
+		Weapons SituationalItem = new Weapons(SituationalItemName, SituationalItemWeight, SituationalItemDescription, SituationalItemDamage);
 		return SituationalItem;
 	}
 }

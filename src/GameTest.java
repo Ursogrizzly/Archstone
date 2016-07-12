@@ -57,12 +57,12 @@ public class GameTest {
 			else if ((dynamicUserInput.toLowerCase()).equals("no"))
 				System.out.println("You are " + Player1.getPlayerWeightStatus() + ", and have no sword." + "\n");
 		
-			System.out.println("#Would you like a pile of heavy rocks? [Yes] or [no].");
+			System.out.println("#Would you like a pile of heavy rocks? [Yes] or [no].");// rocks and situational items not working
 			dynamicUserInput = keyboard.next();
 			if (dynamicUserInput.toLowerCase().equals("yes")) { // if user takes sword
 				double rockWeight = 20;
 				String rockDescription = "a pile of heavy rocks";
-				Player1.addItemSituational("rocks", rockWeight, rockDescription, 0); // tells Player1 to gainItem with parameter swordWeight
+				Player1.addItemSituational("heavy rocks", rockWeight, rockDescription, 0); // tells Player1 to gainItem with parameters
 				System.out.println("You are " + Player1.getPlayerWeightStatusExact() + ", and have a pile a rocks. Genius." + "\n");
 				} 
 			else
@@ -77,8 +77,10 @@ public class GameTest {
 						Player1.removeItem(Weapons.Sword);
 						System.out.println("You dropped a " + Weapons.Sword.itemDescription + Weapons.Sword.itemName + " and have " + Player1.getPlayerWeightStatusExact());
 					}
-					else if (dynamicUserInput.toLowerCase().equals("rock") || dynamicUserInput.toLowerCase().equals("rocks")) {
-						Player1.removeItem(Weapons.Spear);
+					else if (dynamicUserInput.toLowerCase().equals("rocks") || dynamicUserInput.toLowerCase().equals("rock")) { // rocks and situational items not working
+						double rockWeight = 20;
+						String rockDescription = "a pile of heavy rocks";
+						//Player1.removeItem(Player1.addItemSituational("heavy rocks", rockWeight, rockDescription, 0)); 
 						System.out.println("You dropped a " + Weapons.Spear.itemDescription +  Weapons.Spear.itemName + " and have " + Player1.getPlayerWeightStatusExact());
 					}
 				else 
