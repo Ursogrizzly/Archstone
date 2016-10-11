@@ -1,11 +1,14 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 public class PlayerStats {
 
-	static ArrayList<Weapons> inventory; //Instantiate an arraylist of items to hold inventory
+	ArrayList<Weapons> inventory; //Instantiate an arraylist of items to hold inventory
 	private double PlayerCarryWeight = 0; //setting variables
 	private double PlayerCarryLimit = 0;
 	private int PlayerMaxHealth = 0;
 	private int PlayerCurrentHealth = 0;
+	private Weapons PlayerEquipedWeapon;
+	private boolean aliveStatus = true;
 	
 	public PlayerStats(int wt, int maxH) {
 		//Add more parameters to this when you need to make more attributes such as
@@ -13,14 +16,19 @@ public class PlayerStats {
 		this.inventory = new ArrayList<Weapons>();
 		this.PlayerCarryLimit = wt;
 		this.PlayerMaxHealth = maxH;
+		//this.PlayerEquipedWeapon = Weapons.Object;
 		
 		//Initialize current variables
-		PlayerCarryWeight = 0;
-		PlayerCurrentHealth = PlayerMaxHealth;	
-
-
+		this.PlayerCarryWeight = 0;
+		this.PlayerCurrentHealth = PlayerMaxHealth;	
+		this.aliveStatus = aliveStatus;
 	}
 	
+/* 
+ * PRINT OUT INVENTORY?
+ */
+	
+
 /*
 * SET WEIGHT player carry WEIGHT, set player carry limit,
 */	
@@ -69,7 +77,7 @@ public class PlayerStats {
 			
 			inventory.add(Item); //Add item to the inventory
 			this.PlayerCarryWeight += Item.itemWeight; //Add the items weight to current weight
-			return ("You picked up "+Item.itemName);
+			return ("You picked up "+ Item.itemName);
 			}
 		}
 	
@@ -125,6 +133,20 @@ public class PlayerStats {
 		PlayerHealthStatus = ((double)this.PlayerCurrentHealth/(this.PlayerMaxHealth)*100.00);
 		return PlayerHealthStatus;
 		}
+	public void setAliveStatus(boolean newAliveStatus){
+		this.aliveStatus = newAliveStatus;
+	}
+	
+	public boolean getAliveStatus(){
+		if (PlayerCurrentHealth > 0) {
+			aliveStatus = true;
+			return aliveStatus;
+		}
+		else {
+			aliveStatus = false;
+			return aliveStatus;
+		}
+	}
 	
 }
 
